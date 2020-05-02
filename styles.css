@@ -1,0 +1,120 @@
+:root{
+    --back: #393e41;
+    --font: #f6f7eb; 
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: auto; 
+    width: 80%;
+    max-width: 1000px;
+}
+
+.grid{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header header header"
+                         "main main main aside"
+                         "footer footer footer footer";
+}
+
+header {
+    grid-column: header;
+    grid-row: header;
+    padding:  20px;
+    background: var(--back);
+}
+
+header{
+    position: fixed;
+    width: 66%;
+    justify-self: center;
+}
+
+header .menu{
+    display: flex;
+    align-items: center;
+}
+
+header img{
+    width: 15%;
+}
+
+header .menu a{
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px 15px;
+    background: var(--back);
+    color: var(--font);
+}
+
+main{
+    grid-row: main;
+    grid-column: main;
+    background: ghostwhite;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+main p{
+    margin: 20px;
+    padding: 10px;
+}
+
+main .video{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+main img{
+    margin-top: 20px;
+    width: 100%;
+}
+
+aside{
+    grid-row: aside;
+    grid-column: aside;
+    background: ghostwhite;
+    padding: 10px;
+    height: 250px;
+    margin-top: 100px;
+}
+
+aside .form{
+    font-family: fantasy;
+    font-size: 20px;
+    padding: 10px;
+}
+
+aside input{
+    width: 100%;
+    height: 30px;
+    font-size: 20;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+aside ::placeholder{
+    font-size: 15px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px){
+    .grid{
+        grid-template-areas: "header header header header"
+                             "main main main main"
+                             "aside aside aside aside"
+                             "footer footer footer footer";
+    }
+}
+
+
+
